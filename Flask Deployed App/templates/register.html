@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register</title>
+    <link rel="stylesheet" href="../static/uploads/login.css"> <!-- Link to your CSS file -->
+    <style>
+        .error {
+            color: red;
+            font-size: 0.9em;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>Register</h2>
+        {% with messages = get_flashed_messages(with_categories=true) %}
+            {% if messages %}
+                <ul>
+                    {% for category, message in messages %}
+                        <li class="{{ category }}">{{ message }}</li>
+                    {% endfor %}
+                </ul>
+            {% endif %}
+        {% endwith %}
+        <form action="/register" method="POST">
+            <div class="form-group">
+                <label for="name">Name</label>
+                <!-- Accept letters only, no spaces, numbers, or special characters -->
+                <input type="text" id="name" name="name" pattern="[A-Za-z]+" title="Name should only contain letters, no spaces, numbers, or special characters." required>
+                <span class="error" id="nameError"></span>
+            </div>
+            
+            <div class="form-group">
+                <label for="email">Email</label>
+                <!-- Valid email pattern -->
+                <input type="email" id="email" name="email" pattern="[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$" title="Enter a valid email address without spaces." required>
+                <span class="error" id="emailError"></span>
+            </div>
+            <div class="form-group">
+                <label for="password">Password</label>
+                <!-- Password requirements: At least 8 characters, 1 uppercase, 1 lowercase, 1 number -->
+                <input type="password" id="password" name="password" pattern="(?=.*[a-z])(?=.*[A-Z])(?=.*\d)[A-Za-z\d]{8,}" title="Password must be at least 8 characters long, contain one uppercase letter, one lowercase letter, and one number." required>
+                <span class="error" id="passwordError"></span>
+            </div>
+            <button type="submit">Register</button>
+        </form>
+        <p>Already have an account? <a href="/login">Login here</a></p>
+    </div>
+
+    <script>
+        // Client-side JavaScript to provide instant feedback on form input
+        const nameInput = document.getElementById('name');
+        const emailInput = document.getElementById('email');
+        const passwordInput = document.getElementById('password');
+
+        // Error message spans
+        const nameError = document.getElementById('nameError');
+        const emailError = document.getElementById('emailError');
+        const passwordError = document.getElementById('passwordError');
+
+        // Name validation: should allow letters and spaces only
+        nameInput.addEventListener('input', function() {
+            if (!nameInput.checkValidity()) {
+                nameError.textContent = 'Name should only contain letters and spaces.';
+            } else {
+                nameError.textContent = '';
+            }
+        });
+
+        // Email validation
+        emailInput.addEventListener('input', function() {
+            if (!emailInput.checkValidity()) {
+                emailError.textContent = 'Please enter a valid email address.';
+            } else {
+                emailError.textContent = '';
+            }
+        });
+
+        // Password validation
+        passwordInput.addEventListener('input', function() {
+            if (!passwordInput.checkValidity()) {
+                passwordError.textContent = 'Password must be at least 8 characters long, contain one uppercase letter, one lowercase letter, and one number.';
+            } else {
+                passwordError.textContent = '';
+            }
+        });
+    </script>
+</body>
+</html>

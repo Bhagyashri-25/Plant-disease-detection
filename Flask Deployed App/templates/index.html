@@ -1,0 +1,93 @@
+<html>
+{% extends 'base.html' %}
+{% block pagetitle %}
+AI Engine
+{% endblock pagetitle %}
+
+{% block body %}
+<body style="background-color: #dcf6b4;"></body>
+<div>
+    <div class="container">
+        <!-- For demo purpose -->
+        <div class="row mb-5 text-center text-white">
+            <div class="col-lg-10 mx-auto">
+                <h1 class="display-4" style="padding-top: 2%;font-weight: 400;color: rgb(4, 54, 4);"><b>🍀AI Engine🍀</b></h1>
+                <p class="lead" style="font-weight: 500;color: black;">Let AI Engine Will Help You To Detect Disease</p>
+            </div>
+        </div>
+        <!-- End -->
+        <div class="row ">
+            <div class="col mx-auto">
+                <div class="p-5 bg-white shadow rounded-lg" style="height: 95%;">
+
+                    <h5><b>Why is it necessary to detect disease in plant ?</b></h5>
+                    <p>Plant diseases affect the growth of their respective species. In addition, some research gaps are
+                        identified from which to obtain greater transparency for detecting diseases in plants, even
+                        before their symptoms appear clearly.
+                        diagnosis is one of the most important aspects of a plant pathologist's training. Without proper
+                        identification of the disease and the disease-causing agent, disease control measures can be a
+                        waste of time and money and can lead to further plant losses. Proper disease diagnosis is
+                        necessary.
+                    </p>
+                </div>
+            </div>
+            <div class="col mx-auto">
+                <div class="p-5 bg-white shadow rounded-lg" style="height: 95%;"><img
+                        src="data:image/jpeg;base64,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 "
+                        height="300" alt="" width="200" class="d-block mx-auto mb-4 rounded-pill">
+
+                    <!-- Default bootstrap file upload-->
+
+                    <form action="/submit" method="POST" enctype="multipart/form-data">
+                        <div class="custom-file overflow-hidden mb-4">
+                            <input type="file" id="actual-btn" hidden name="image" />
+                            <label for="actual-btn">Choose File</label>
+                            <span id="file-chosen">No file chosen</span>
+                        </div>
+
+                        <!-- End -->
+
+                        <h6 class="text-center mb-4 text-muted">
+                            Simply upload your plant's leaf image and then see the magic of AI.
+                        </h6>
+
+                        <!-- Custom bootstrap upload file-->
+                        <center>
+                            <a class="mx-2"><button type="submit" class="btn btn-outline-success">Submit</button></a>
+                        </center>
+                    </form>
+                    <!-- End -->
+
+                </div>
+            </div>
+            <div class="col mx-auto">
+                <div class="p-5 bg-white shadow rounded-lg" style="height: 95%;">
+                    <h5><b>Prevent Plant Disease follow below steps:</b></h5>
+                    <ol>
+                        <li>Follow Good Sanitation Practices.</li>
+                        <li>Fertilize to Keep Your Plants Healthy.</li>
+                        <li>Inspect Plants for Diseases Before You Bring Them Home.</li>
+                        <li>Allow the Soil to Warm Before Planting.</li>
+                        <li>Ensure a Healthy Vegetable Garden By Rotating Crops.</li>
+                        <li>Provide Good Air Circulation</li>
+                        <li>Remove Diseased Stems and Foliage</li>
+                    </ol>
+                    <a target="_blank" href="https://www.thespruce.com/prevent-plant-diseases-in-your-garden-2539511"
+                        class="mx-2"><button type="button" class="btn btn-outline-success">More info</button></a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    const actualBtn = document.getElementById('actual-btn');
+
+    const fileChosen = document.getElementById('file-chosen');
+
+    actualBtn.addEventListener('change', function () {
+        fileChosen.textContent = this.files[0].name
+    })
+</script>
+
+{% endblock body %}
